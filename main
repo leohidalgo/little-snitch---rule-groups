@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+mkdir hosts
+
+LAST_COMMIT=$(git ls-remote https://github.com/StevenBlack/hosts.git HEAD | awk '{ print $1}')
+
+if [ $(cat .last_steven_black_commit) = $LAST_COMMIT ]; then
+    exit 0
+fi
+
+wget -O hosts/hosts-unified                                      https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+wget -O hosts/hosts-fakenews                                     https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-only/hosts
+wget -O hosts/hosts-gambling                                     https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/gambling-only/hosts
+wget -O hosts/hosts-porn                                         https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/porn-only/hosts
+wget -O hosts/hosts-social                                       https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/social-only/hosts
+
+for file in hosts/hosts-*
+do
+    ./generate-rules "$file" >> "$file".lsrules
+done
+
+mv hosts/*.lsrules rules
+echo $LAST_COMMIT > .last_steven_black_commit
+
+git config --global user.name "leohidalgo (bot)"
+git config --global user.email "leohidalgo+bot@protonmail.com"
+
+git add rules/*.lsrules .last_steven_black_commit
+git commit -m "[rules] Updated on $(TZ=UTC date)"
+
+git push
+

@@ -1,0 +1,45 @@
+#!/usr/bin/env swift
+
+import Foundation
+
+let filePath = CommandLine.arguments[1]
+let filename = filePath.split(separator: "/")[1]
+
+struct Group: Encodable {
+    let description: String
+    let name: String
+    let deniedRemoteDomains: [String]
+
+    private enum CodingKeys : String, CodingKey {
+        case description
+        case name
+        case deniedRemoteDomains = "denied-remote-domains"
+    }
+}
+
+do {
+    let data = try Data(contentsOf: URL(fileURLWithPath: filePath))
+    let hosts = String(decoding: data, as: UTF8.self).split(separator: "\n")
+
+    var domains: [String] = []
+    for host in hosts {
+        if host.hasPrefix("0.0.0.0") {
+            let starIndex = host.index(host.startIndex, offsetBy: 8)
+
+            domains.append(String(host[starIndex..<host.endIndex]))
+        }
+    }
+
+    let domainsCount = NumberFormatter.localizedString(from: NSNumber(value: domains.count), number: .decimal)
+    let group = Group(description: "\(Date().description); Number of unique domains: \(domainsCount)",
+                      name: "\(filename).lsrules",
+                      deniedRemoteDomains: domains)
+
+    let jsonEncoder = JSONEncoder()
+    jsonEncoder.outputFormatting = [.prettyPrinted, .sortedKeys]
+    let encode = try jsonEncoder.encode(group)
+
+    print(String(data: encode, encoding: .utf8)!)
+} catch {
+    print(error)
+}
