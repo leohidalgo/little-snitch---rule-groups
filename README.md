@@ -1,6 +1,7 @@
 # 🔐 Little Snitch --- Rule Groups
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/leohidalgo/little-snitch---rule-groups/deploy.yml)
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/leohidalgo/little-snitch---rule-groups/main)
+![GitHub License](https://img.shields.io/github/license/leohidalgo/little-snitch---rule-groups)
 
 This repo provide rule groups for Little Snitch based on unified host list to block ads, malware, fake news and porn.
 
