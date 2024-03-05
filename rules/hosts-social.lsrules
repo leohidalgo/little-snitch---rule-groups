@@ -2841,11 +2841,12 @@
     "clover.co",
     "pof.com",
     "match.com",
+    "likee.video",
     "mbga.jp",
     "mixi.jp",
     "mixch.tv",
     "lobi.co"
   ],
-  "description" : "2024-02-29 12:07:22 +0000; Number of unique domains: 2,845",
+  "description" : "2024-03-05 12:06:39 +0000; Number of unique domains: 2,846",
   "name" : "hosts-social.lsrules"
 }
