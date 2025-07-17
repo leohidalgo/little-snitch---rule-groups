@@ -194,6 +194,13 @@
     "789clubs.vin",
     "789d.club",
     "789f.ac",
+    "789f.ai",
+    "789f.best",
+    "789f.com",
+    "789f.lat",
+    "789f.live",
+    "789f.love",
+    "789f.one",
     "789k.club",
     "789v.club",
     "789vg.net",
@@ -6592,6 +6599,6 @@
     "everbet.bg",
     "slotino.bg"
   ],
-  "description" : "2025-07-14 00:29:38 +0000; Number of unique domains: 6,591",
+  "description" : "2025-07-17 12:10:49 +0000; Number of unique domains: 6,598",
   "name" : "hosts-gambling.lsrules"
 }
