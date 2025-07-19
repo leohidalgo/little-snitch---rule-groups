@@ -1008,6 +1008,7 @@
     "photos-h.ak.fbcdn.net",
     "photos-snc1.fbcdn.net",
     "pixel.facebook.com",
+    "pl-pl.facebook.com",
     "platform.foursquare.com",
     "postmaster.facebook.com",
     "prod.facebook.com",
@@ -3058,6 +3059,8 @@
     "tiktok-lb-alisg.byteoversea.net",
     "tiktok-lb-maliva.byteoversea.net",
     "tiktok-lb-texas.useast5.byteoversea.net.byteigtm.com",
+    "tiktok-platform-lb-alisg.byteoversea.net",
+    "tiktok-platform-lb-maliva.byteoversea.net",
     "tiktok.com",
     "tiktok.in",
     "tiktok.org",
@@ -3240,6 +3243,6 @@
     "pinpages.alwaysdata.net",
     "allotalk.com"
   ],
-  "description" : "2025-07-17 12:10:50 +0000; Number of unique domains: 3,239",
+  "description" : "2025-07-19 00:27:29 +0000; Number of unique domains: 3,242",
   "name" : "hosts-social.lsrules"
 }
