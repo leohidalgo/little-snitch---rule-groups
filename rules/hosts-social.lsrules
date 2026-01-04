@@ -3241,8 +3241,9 @@
     "extensions-discovery-images.twitch.tv",
     "panels.twitch.tv",
     "pinpages.alwaysdata.net",
-    "allotalk.com"
+    "allotalk.com",
+    "sniffies.com"
   ],
-  "description" : "2026-01-03 12:44:07 +0000; Number of unique domains: 3,242",
+  "description" : "2026-01-04 12:44:48 +0000; Number of unique domains: 3,243",
   "name" : "hosts-social.lsrules"
 }
